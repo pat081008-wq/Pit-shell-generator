@@ -5,8 +5,8 @@
 // ═══════════════════════════════════════════════════════════
 
 const USERS = [
-  { username: "admin",   password: "mrec2024"    },
-  { username: "patrick", password: "changeme"    },
+  { username: "Patrick Richards",   password: "rT4*U5xMmX"    },
+  { username: "Dean Richards", password: "gF^s$%p3mV"    },
 ];
 
 // Do not modify below this line
