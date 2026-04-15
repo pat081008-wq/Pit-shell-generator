@@ -1,35 +1,29 @@
 // ═══════════════════════════════════════════════════════════
 //  MREC Pit Shell Generator — User Credentials
 // ═══════════════════════════════════════════════════════════
-//  Edit the USERS list below to manage access.
+//  Edit the USERS object below to manage access.
 //
-//  Format:   { username: "name", password: "password" }
+//  Format:   "Full Name": "password"
 //
-//  Add a user:    add a new line in the same format
-//  Remove a user: delete their line
-//  Change password: edit the password value
+//  Add a user:     add a new line in the same format
+//  Remove a user:  delete their line
+//  Change password: edit the value on the right
 //
-//  ⚠ Usernames are NOT case-sensitive (patrick = Patrick = PATRICK)
+//  ⚠ Usernames are NOT case-sensitive
 //  ⚠ Passwords ARE case-sensitive
-//  ⚠ Usernames must not contain spaces — use a single word or dot notation
-//     e.g. "patrick" or "patrick.richards"
+//  ⚠ Do NOT commit real passwords to a public GitHub repo
 // ═══════════════════════════════════════════════════════════
 
-const USERS = [
-  { username: "patrick",          password: "rT4*U5xMmX"  },
-  { username: "dean",             password: "gF^s$%p3mV"  },
-  { username: "admin",            password: "mrec2024"     },
-  { username: "Patrick Richards",            password: "mrec"     },
-];
+const USERS = {
+  "Patrick Richards":  "rT4*U5xMmX",
+  "Dean Richards":     "gF^s$%p3mV",
+  "admin":             "mrec2024",
+};
 
 // ── Do not modify below this line ──
 function checkCredentials(username, password) {
-  if (!Array.isArray(USERS)) {
-    console.error('credentials.js: USERS must be an array.');
-    return false;
-  }
-  return USERS.some(function(u) {
-    return u.username.toLowerCase() === username.toLowerCase().trim()
-        && u.password === password;
-  });
+  const key = Object.keys(USERS).find(
+    k => k.toLowerCase() === username.toLowerCase().trim()
+  );
+  return key !== undefined && USERS[key] === password;
 }
