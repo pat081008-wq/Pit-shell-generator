@@ -1,29 +1,20 @@
-// ═══════════════════════════════════════════════════════════
-//  MREC Pit Shell Generator — User Credentials
-// ═══════════════════════════════════════════════════════════
-//  Edit the USERS object below to manage access.
+// ═══════════════════════════════════════════════════════════════
+//  Pit shell generator — USER CREDENTIALS
+//  Edit this file to manage access to the dashboard.
 //
-//  Format:   "Full Name": "password"
+//  Format:  "username": "password"
+//  Add a new user:   "newuser": "theirpassword",
+//  Remove a user:    delete or comment out their line.
+//  Change password:  edit the value on the right.
 //
-//  Add a user:     add a new line in the same format
-//  Remove a user:  delete their line
-//  Change password: edit the value on the right
-//
-//  ⚠ Usernames are NOT case-sensitive
-//  ⚠ Passwords ARE case-sensitive
-//  ⚠ Do NOT commit real passwords to a public GitHub repo
-// ═══════════════════════════════════════════════════════════
+//  ⚠  This file is loaded by the browser. Do NOT commit real
+//     production passwords to a public GitHub repository.
+//     For public repos, keep this file with placeholder passwords
+//     and share actual credentials privately with each customer.
+// ═══════════════════════════════════════════════════════════════
 
 const USERS = {
-  "Patrick Richards":  "rT4*U5xMmX",
-  "Dean Richards":     "gF^s$%p3mV",
-  "admin":             "mrec2024",
+  "Patrick Richards":   "geocore2024",
+  "demo":    "demo",
+  "mrec":    "mrec2024"
 };
-
-// ── Do not modify below this line ──
-function checkCredentials(username, password) {
-  const key = Object.keys(USERS).find(
-    k => k.toLowerCase() === username.toLowerCase().trim()
-  );
-  return key !== undefined && USERS[key] === password;
-}
