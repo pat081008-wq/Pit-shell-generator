@@ -19,6 +19,7 @@ const USERS = [
   { username: "patrick",          password: "rT4*U5xMmX"  },
   { username: "dean",             password: "gF^s$%p3mV"  },
   { username: "admin",            password: "mrec2024"     },
+  { username: "Patrick Richards",            password: "mrec"     },
 ];
 
 // ── Do not modify below this line ──
